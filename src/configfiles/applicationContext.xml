@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:ns2="http://cxf.apache.org/bindings"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd     
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd     
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd   
+	http://cxf.apache.org/jaxws 
+	http://cxf.apache.org/schemas/jaxws.xsd">
+	<description>Spring公共配置文件</description>
+	<context:property-placeholder location="classpath:application.properties" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		<property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}" />
+	</bean>	
+	
+	
+	<!-- cxf properity -->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<jaxws:endpoint id="geneReport" implementor="org.hpin.webservice.service.YmGeneReportServiceImpl" address="/geneReport" />
+	<!-- 金域服务接口  -->
+	<jaxws:endpoint id="serviceJY" implementor="org.hpin.webservice.service.GeneServiceImplJY" address="/serviceJY" />
+	<!-- 弘康服务接口  -->
+	<jaxws:endpoint id="serviceHK" implementor="org.hpin.webservice.service.GeneServiceImplHK" address="/serviceHK" />
+	<!-- 天津邮政服务接口  -->
+	<jaxws:endpoint id="serviceToC" implementor="org.hpin.webservice.service.GeneServiceImplTY" address="/serviceToC" />
+	<!-- 平安健康服务接口  -->
+	<jaxws:endpoint id="servicePA" implementor="org.hpin.webservice.websExt.impl.GeneServiceImplPA" address="/servicePA" />
+
+	<!-- 现场采集接口-自动建立场次 create by henry.xu 20170215 -->
+	<jaxws:endpoint id="serviceLocCol" implementor="org.hpin.webservice.websExt.impl.LocaleCollectionWebServiceImpl" address="/serviceLocCol" />
+	<!-- 报告客户信息接口-信息保存create by henry.xu 20170223 -->
+	<jaxws:endpoint id="reportCustomer" implementor="org.hpin.webservice.websExt.impl.ReportCustomerInfoServiceImpl" address="/reportCustomer" />
+	<!-- cxf end -->
+
+	<!-- add by YoumingDeng 2016-11-29  start -->
+	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler" lazy-init="true">
+		<property name="nativeJdbcExtractor" ref="nativeJdbcExtractor"/>
+	</bean>
+	<!-- add by YoumingDeng 2016-11-29  end -->
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource">
+		</property>
+		<property name="mappingLocations">
+			    <list>			  
+				  <value>classpath:/org/hpin/webservice/bean/*.hbm.xml</value>
+				  <value>classpath:/org/hpin/webservice/bean/jz/*.hbm.xml</value>
+				  <value>classpath:/org/hpin/webservice/bean/hk/*.hbm.xml</value>
+				</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+			<!--  	<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl_auto}</prop>-->
+				<prop key="hibernate.generate_statistics">${hibernate.generate_statistics}</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</prop>
+			</props>
+		</property>
+
+		<!-- add by YoumingDeng 2016-11-29  start -->
+		<property name="lobHandler" ref="lobHandler"></property>
+		<!-- add by YoumingDeng 2016-11-29  end -->
+	</bean>
+
+	<bean id="nativeJdbcExtractor"
+		class="org.springframework.jdbc.support.nativejdbc.C3P0NativeJdbcExtractor" />
+
+	<!--  HibernateDaoSupport -->
+	<bean id="HibernateDaoSupport"
+		class="org.hpin.common.core.orm.daoWrapper.HibernateDaoSupportWrapper">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<!--  JdbcDaoSupport -->
+	<bean id="JdbcDaoSupport"
+		class="org.hpin.common.core.orm.daoWrapper.JdbcDaoSupportWrapper">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>
+	<!--  HibernateDaoSupport and JdbcDaoSupport -->
+	<bean id="DaoSupport" class="org.hpin.common.core.orm.daoWrapper.DaoSupport">
+		<property name="hibernateDaoSupport">
+			<ref local="HibernateDaoSupport" />
+		</property>
+		<property name="jdbcDaoSupport">
+			<ref local="JdbcDaoSupport" />
+		</property>
+	</bean>
+	<bean id="org.hpin.common.core.orm.GenericDao" class="org.hpin.common.core.orm.GenericDao" />
+	<!-- 事务配置 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
+	<context:component-scan base-package="org.hpin"/>
+	
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+		
+	 <!-- spring定时器 -->
+	<bean id="startQuertz" lazy-init="false" autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+			    <!--<ref bean ="geneReportTask"/>-->
+				<!--<ref bean="createScheduleJYTask"/>-->
+				<!--<ref bean="downloadReportJYTask"/>-->
+				<!--<ref bean="dealUnmatchScheduleTask"/>-->
+				<!--<ref bean="pushStatusToHKTask"/>-->
+			</list>
+		</property>
+	</bean>
+	 <!-- 第一步: 配置好要定时调用的业务类 --> 
+    <bean id="geneReportService" class="org.hpin.webservice.service.GeneReportService" />
+    <!-- 第二步: 定义好具体要使用类的哪一个业务方法 -->
+	<bean id="jobgeneReport"  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="geneReportService" /> <!--  目标bean -->
+        <property name="targetMethod" value="pushGeneNewPdfToWpt" />  <!-- 要执行目标bean的哪一个业务方法  -->
+        <property name="concurrent" value="false"/> <!--  是否并发 -->  
+    </bean>
+   
+     <!-- 第三步: 定义好调用模式: 如每隔2秒钟调用一次或每天的哪个时间调用一次等 --> 
+    <bean id="geneReportTask" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="jobgeneReport" />  
+        <property name="cronExpression" value="0 0/3 * * * ?" />  <!-- 每天某时间执行 -->
+    </bean>
+
+	<!-- 把金域传送的原始报告信息转存到定时下载报告的任务表中 -->
+	<bean id="scheduleServiceJY" class="org.hpin.webservice.service.ErpScheduleJobService"/>
+
+	<bean id="createScheduleJY" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="scheduleServiceJY" />
+		<property name="targetMethod" value="transferOrgData"/>
+		<property name="concurrent" value="false"/>
+	</bean>
+	<!-- 转换原始数据的定时任务 -->
+	<bean id="createScheduleJYTask" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="createScheduleJY"/>
+		<property name="cronExpression" value="0 0/1 * * * ?"/> <!-- 每隔x分钟执行一次 -->
+	</bean>
+
+	<!-- 下载金域报告的定时任务 -->
+	<bean id="downloadReportJY" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="scheduleServiceJY"/>
+		<property name="targetMethod" value="dealReport"/>
+		<property name="concurrent" value="false"/>
+	</bean>
+	<!-- 下载金域报告 -->
+	<bean id="downloadReportJYTask" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="downloadReportJY"/>
+		<property name="cronExpression" value="0 0/2 * * * ?"/> <!-- 每隔10分钟执行一次 -->
+	</bean>
+
+	<!-- 处理异常的金域定时任务,与会员表进行重新匹配 -->
+	<bean id="dealUnmatchSchedule" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="scheduleServiceJY"/>
+		<property name="targetMethod" value="dealUnmatchScheduleJY"/>
+		<property name="arguments"  value="0,1"/><!-- 参数 -->
+		<property name="concurrent" value="false"/>
+	</bean>
+	<!-- 处理异常的金域定时任务 -->
+	<bean id="dealUnmatchScheduleTask" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="dealUnmatchSchedule"/>
+		<property name="cronExpression" value="0 0/1 * * * ?"/> <!-- 每隔10分钟执行一次 -->
+	</bean>
+
+	<!-- 给弘康推送客户状态信息 start -->
+	<bean id="pushStatusToHK" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="scheduleServiceJY"/>
+		<property name="targetMethod" value="pushStatusToHK"/>
+		<property name="concurrent" value="false"/>
+	</bean>
+	<bean id="pushStatusToHKTask" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="pushStatusToHK"/>
+		<property name="cronExpression" value="0 0/10 * * * ?"/> <!-- 每隔10分钟执行一次 -->
+	</bean>
+	<!-- 给弘康推送客户状态信息 end -->
+
+    <!-- 启动定时器 -->
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<!-- 核心线程数 -->
+		<property name="corePoolSize" value="100" />
+		<!-- 最大线程数 -->
+		<property name="maxPoolSize" value="400" />
+		<!-- 队列最大长度 >=mainExecutor.maxSize -->
+		<property name="queueCapacity" value="500" />
+		<!-- 线程池维护线程所允许的空闲时间 -->
+		<property name="keepAliveSeconds" value="300" />
+		<!-- 线程池对拒绝任务(无线程可用)的处理策略 -->
+		<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+		</property>
+	</bean>
+ 
+</beans>

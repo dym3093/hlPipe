@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql_list>
+
+    <!-- 微磁查询JPG报告 -->
+    <!-- 2017-03-31 -->
+    <!--Damian-->
+    <sql id="FIND_IMG_WEICI" >
+    <![CDATA[
+        SELECT
+            i.IMGPATH IMGPATH,
+            ( SELECT CODE FROM ERP_REPORTDETAIL_IMGTASK WHERE id = i.TASKID ) CODE
+        FROM
+            ERP_REPORTDETAIL_IMGINFO i
+        WHERE 1 = 1
+            AND i.ISDELETED = 0
+            AND i.TASKID =(
+                SELECT t.ID FROM ERP_REPORTDETAIL_IMGTASK t WHERE 1 = 1 AND t.ISDELETED = 0 AND t.STATE = 1 AND t.USERNAME =? AND t.PHONENO =? AND t.CODE LIKE 'C%'
+                    AND t.CREATETIME = ( SELECT MAX( k.CREATETIME ) FROM ERP_REPORTDETAIL_IMGTASK k WHERE 1 = 1 AND k.ISDELETED = 0 AND k.STATE = 1 AND k.CODE IN(t.CODE) )
+            )
+        ORDER BY LENGTH(i.IMGORDER), i.IMGORDER ASC
+    ]]>
+    </sql>
+
+    <!-- 无创生物电查询JPG报告 -->
+    <!-- 2017-03-31 -->
+    <!--Damian-->
+    <sql id="FIND_IMG_BLY" >
+    <![CDATA[
+        SELECT
+            i.IMGPATH IMGPATH,
+            ( SELECT CODE FROM ERP_REPORTDETAIL_IMGTASK WHERE id = i.TASKID ) CODE
+        FROM
+        ERP_REPORTDETAIL_IMGINFO i
+        WHERE 1 = 1
+            AND i.ISDELETED = 0
+            AND i.TASKID =(
+                SELECT t.ID FROM ERP_REPORTDETAIL_IMGTASK t WHERE 1 = 1 AND t.ISDELETED = 0 AND t.STATE = 1 AND t.USERNAME =? AND t.PHONENO =? AND t.IDNO =? AND t.CODE LIKE 'W%'
+                AND t.CREATETIME =( SELECT MAX( k.CREATETIME ) FROM ERP_REPORTDETAIL_IMGTASK k WHERE 1 = 1 AND k.ISDELETED = 0 AND k.STATE = 1 AND k.CODE IN(t.CODE) )
+            )
+        ORDER BY LENGTH(i.IMGORDER), i.IMGORDER ASC
+    ]]>
+    </sql>
+
+    <!-- 查询检测人员年龄 -->
+    <!-- 2017-03-31 -->
+    <!--Damian-->
+    <sql id="FIND_AGE_WC">
+    <![CDATA[
+        SELECT AGE FROM ERP_CUSTOMER_TEMP_WUCHUANG  WHERE CODE = ?
+    ]]>
+    </sql>
+    
+    <!-- 查询ErpCustomer信息 -->
+    <!-- 2017-04-24 -->
+    <!--LeslieTong-->
+    <sql id="FIND_CUSTOMER">
+    <![CDATA[
+        SELECT C.NAME
+        	,C.IDNO
+        	,C.PHONE
+        	,C.ID 
+        	,C.SAMPLING_DATE AS SAMPLINGDATE 
+        	,C.PDFFILEPATH
+        	,C.CODE
+        	,C.SETMEAL_NAME AS SETMEALNAME 
+        	FROM
+        	ERP_CUSTOMER C WHERE IS_DELETED = 0 
+    ]]>
+    </sql>
+    
+    <!-- 查询 -->
+    <!-- 2017-03-31 -->
+    <!--Damian-->
+    <sql id="FIND_GENE_JPG">
+    <![CDATA[
+        SELECT RP.SETMEAL_NAME AS SETMEALNAME,RP.CODE,RP.USERNAME FROM ERP_REPORTDETAIL_PDFCONTENT RP WHERE (RP.MATCHSTATE = 2 OR RP.MATCHSTATE = 12) AND RP.CUSTOMERID = ? 
+    ]]>
+    </sql>
+    
+    <!-- 查询 imgTask -->
+    <!-- 2017-04-24 -->
+    <!--LeslieTong-->
+    <sql id="FIND_IMGTASK">
+    <![CDATA[
+        SELECT t.ID FROM ERP_REPORTDETAIL_IMGTASK t WHERE 1 = 1 AND t.ISDELETED = 0 AND t.STATE = 1 AND t.CODE  =? AND t.USERNAME = ?
+                AND t.CREATETIME =( SELECT MAX( k.CREATETIME ) FROM ERP_REPORTDETAIL_IMGTASK k WHERE 1 = 1 AND k.ISDELETED = 0 AND k.STATE = 1 AND k.CODE IN(t.CODE)) 
+    ]]>
+    </sql>
+    
+    <!-- 查询 imgInfo -->
+    <!-- 2017-04-24 -->
+    <!--LeslieTong-->
+    <sql id="FIND_IMGINFO">
+    <![CDATA[
+        SELECT
+            i.IMGPATH IMGPATH 
+        FROM
+        ERP_REPORTDETAIL_IMGINFO i
+        WHERE 1 = 1
+            AND i.ISDELETED = 0
+            AND i.TASKID = ?
+        ORDER BY LENGTH(i.IMGORDER), i.IMGORDER ASC 
+    ]]>
+    </sql>
+    
+    <!-- 查询 pdfContentInfo -->
+    <!-- 2017-04-24 -->
+    <!--LeslieTong-->
+    <sql id="FIND_PDFCONTENT_INFO">
+    <![CDATA[
+        SELECT
+            PC.FILEPATH, 
+            PC.PDFNAME, 
+            PC.PRINTBTHNO 
+        FROM
+        ERP_REPORTDETAIL_PDFCONTENT PC
+        WHERE 1 = 1
+            AND PC.CREATEDATE = ( SELECT MAX(PDF.CREATEDATE) FROM ERP_REPORTDETAIL_PDFCONTENT PDF WHERE PDF.CUSTOMERID=PC.CUSTOMERID AND (PDF.MATCHSTATE = '2' OR PDF.MATCHSTATE = '12') )
+            AND PC.CUSTOMERID = ?  
+    ]]>
+    </sql>
+
+</sql_list>

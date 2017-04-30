@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.hk.ErpPreCustomer" table="ERP_PRE_CUSTOMER" schema="YMJY">
+      <id name="id" type="java.lang.String">
+            <column name="ID"  />
+            <generator class="uuid"></generator>
+        </id>
+        <property name="applicantName" type="java.lang.String">
+            <column name="APPLICANT_NAME"/>
+        </property>
+        <property name="applicantIdcard" type="java.lang.String">
+            <column name="APPLICANT_IDCARD"/>
+        </property>
+        <property name="applicantPhone" type="java.lang.String">
+            <column name="APPLICANT_PHONE"/>
+        </property>
+        <property name="applicantSex" type="java.lang.String">
+            <column name="APPLICANT_SEX"/>
+        </property>
+        <property name="applicantAge" type="java.lang.String">
+            <column name="APPLICANT_AGE"/>
+        </property>
+        <property name="wereName" type="java.lang.String">
+            <column name="WERE_NAME"/>
+        </property>
+        <property name="wereIdcard" type="java.lang.String">
+            <column name="WERE_IDCARD"/>
+        </property>
+        <property name="werePhone" type="java.lang.String">
+            <column name="WERE_PHONE"/>
+        </property>
+        <property name="wereSex" type="java.lang.String">
+            <column name="WERE_SEX"/>
+        </property>
+        <property name="wereAge" type="java.lang.String">
+            <column name="WERE_AGE"/>
+        </property>
+        <property name="checkboxEmilAddr" type="java.lang.String">
+            <column name="CHECKBOX_EMIL_ADDR"/>
+        </property>
+        <property name="reportSendAddr" type="java.lang.String">
+            <column name="REPORT_SEND_ADDR"/>
+        </property>
+        <property name="checkCobmo" type="java.lang.String">
+            <column name="CHECK_COBMO"/>
+        </property>
+        <property name="numPolicy" type="java.lang.String">
+            <column name="NUM_POLICY"/>
+        </property>
+        <property name="orderCreateDate" type="java.util.Date">
+            <column name="ORDER_CREATE_DATE"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK"/>
+        </property>
+        <property name="eventsNo" type="java.lang.String">
+            <column name="EVENTS_NO"/>
+        </property>
+        <property name="wereHeight" type="java.lang.String">
+            <column name="WERE_HEIGHT"/>
+        </property>
+        <property name="wereWeight" type="java.lang.String">
+            <column name="WERE_WEIGHT"/>
+        </property>
+        <property name="familyHistory" type="java.lang.String">
+            <column name="FAMILY_HISTORY"/>
+        </property>
+        <property name="customerHistory" type="java.lang.String">
+            <column name="CUSTOMER_HISTORY"/>
+        </property>
+        <property name="reportReceiveName" type="java.lang.String">
+            <column name="REPORT_RECEIVE_NAME"/>
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE"/>
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS"/>
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME"/>
+        </property>
+        <property name="createUserId" type="java.lang.String">
+            <column name="CREATE_USER_ID"/>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME"/>
+        </property>
+        <property name="updateUserId" type="java.lang.String">
+            <column name="UPDATE_USER_ID"/>
+        </property>
+        <property name="isDeleted" type="java.lang.Integer">
+            <column name="is_deleted"/>
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="CODE"/>
+        </property>
+        <property name="erpCustomerId" type="java.lang.String">
+            <column name="ERP_CUSTOMER_ID"/>
+        </property>
+        <property name="erpApplicationId" type="java.lang.String">
+            <column name="ERP_APPLICATION_ID"/>
+        </property>
+        <property name="emsNumber" type="java.lang.String">
+            <column name="EMS_NUMBER"/>
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="COMPANY_ID"/>
+        </property>
+        <property name="shipPorId" type="java.lang.String">
+            <column name="SHIPPRO_ID"/>
+        </property>
+        <property name="batchNo" type="java.lang.String">
+            <column name="BATCH_NO"/>
+        </property>
+        <property name="statusYm" type="java.lang.Integer">
+            <column name="STATUS_YM"/>
+        </property>
+        
+        <property name="performNo" type="java.lang.String">
+            <column name="PERFORM_NO"/>
+        </property>
+        <property name="detailedTestItem" type="java.lang.String">
+            <column name="DETAILED_TEST_ITEM"/>
+        </property>
+        <property name="performStatus" type="java.lang.String">
+            <column name="PREFORM_STATUS"/>
+        </property>
+        <property name="checkFailCaus" type="java.lang.String">
+            <column name="CHECK_FAIL_CAUS"/>
+        </property>
+        <property name="systemReportName" type="java.lang.String">
+            <column name="SYSTEM_REPORT_NAME"/>
+        </property>
+        <property name="confirmCaryTime" type="java.util.Date">
+            <column name="CONFIRM_CARY_TIME"/>
+        </property>
+        <property name="uploadReportTime" type="java.util.Date">
+            <column name="UPLOAD_REPORT_TIME"/>
+        </property>
+        <property name="guardianName" type="java.lang.String">
+            <column name="GUARDIAN_NAME"/>
+        </property>
+        <property name="relationship" type="java.lang.String">
+            <column name="RELATIONSHIP"/>
+        </property>
+        <property name="filePath" type="java.lang.String">
+            <column name="FILE_PATH"/>
+        </property>
+        <property name="batchPre" type="java.lang.String">
+            <column name="BATCH_PRE"/>
+        </property>
+        <property name="ymCombo" type="java.lang.String">
+            <column name="YM_COMBO"/>
+        </property>
+        <property name="authId" type="java.lang.String">
+            <column name="AUTH_ID"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>

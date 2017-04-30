@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- 短信催缴工作类 -->
+	<bean id="org.hpin.rent.service.RentContractPaymentService"
+		class="org.hpin.rent.service.RentContractPaymentService"></bean>
+
+	
+		
+	<!-- 定义调用对象和调用对象的方法
+	<bean id="dunJobtask"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject"
+			ref="org.hpin.rent.service.RentContractPaymentService" />
+		<property name="targetMethod" value="messageDun" />
+	</bean>
+    -->
+	<!-- 定义触发时间 
+	<bean id="dunDoTime" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="dunJobtask" />
+		</property>
+		<property name="cronExpression" value="0 */10 * * * ?" />
+	</bean>
+		-->
+	
+	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序   -->
+	<bean id="startQuertz" lazy-init="false" autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!--ref bean ="personsoftDunDoTime" -->
+			</list>
+		</property>
+	</bean>
+</beans>

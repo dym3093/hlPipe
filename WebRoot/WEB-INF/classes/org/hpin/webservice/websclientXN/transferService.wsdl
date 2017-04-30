@@ -1,0 +1,1187 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://server.webservice.xingning.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="TransferDataWebServiceService" targetNamespace="http://server.webservice.xingning.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://server.webservice.xingning.com/" elementFormDefault="unqualified" targetNamespace="http://server.webservice.xingning.com/" version="1.0">
+
+  <xs:element name="activeDZ" type="tns:activeDZ"/>
+
+  <xs:element name="activeDZResponse" type="tns:activeDZResponse"/>
+
+  <xs:element name="activeymCard" type="tns:activeymCard"/>
+
+  <xs:element name="activeymCardResponse" type="tns:activeymCardResponse"/>
+
+  <xs:element name="applyService" type="tns:applyService"/>
+
+  <xs:element name="applyServiceResponse" type="tns:applyServiceResponse"/>
+
+  <xs:element name="bindSupport" type="tns:bindSupport"/>
+
+  <xs:element name="bindSupportResponse" type="tns:bindSupportResponse"/>
+
+  <xs:element name="changeUserInfo" type="tns:changeUserInfo"/>
+
+  <xs:element name="changeUserInfoResponse" type="tns:changeUserInfoResponse"/>
+
+  <xs:element name="chpwd" type="tns:chpwd"/>
+
+  <xs:element name="chpwdResponse" type="tns:chpwdResponse"/>
+
+  <xs:element name="clientTradeReport" type="tns:clientTradeReport"/>
+
+  <xs:element name="clientTradeReportResponse" type="tns:clientTradeReportResponse"/>
+
+  <xs:element name="createIDCode" type="tns:createIDCode"/>
+
+  <xs:element name="createIDCodeResponse" type="tns:createIDCodeResponse"/>
+
+  <xs:element name="getProducts" type="tns:getProducts"/>
+
+  <xs:element name="getProductsResponse" type="tns:getProductsResponse"/>
+
+  <xs:element name="getServicelog" type="tns:getServicelog"/>
+
+  <xs:element name="getServicelogResponse" type="tns:getServicelogResponse"/>
+
+  <xs:element name="getSupportInfo" type="tns:getSupportInfo"/>
+
+  <xs:element name="getSupportInfoResponse" type="tns:getSupportInfoResponse"/>
+
+  <xs:element name="getUserInfoCommon" type="tns:getUserInfoCommon"/>
+
+  <xs:element name="getUserInfoCommonResponse" type="tns:getUserInfoCommonResponse"/>
+
+  <xs:element name="getUserInfoPrivate" type="tns:getUserInfoPrivate"/>
+
+  <xs:element name="getUserInfoPrivateResponse" type="tns:getUserInfoPrivateResponse"/>
+
+  <xs:element name="getproxycardinfo" type="tns:getproxycardinfo"/>
+
+  <xs:element name="getproxycardinfoResponse" type="tns:getproxycardinfoResponse"/>
+
+  <xs:element name="getproxyuserinfo" type="tns:getproxyuserinfo"/>
+
+  <xs:element name="getproxyuserinfoResponse" type="tns:getproxyuserinfoResponse"/>
+
+  <xs:element name="getymUserServices" type="tns:getymUserServices"/>
+
+  <xs:element name="getymUserServicesResponse" type="tns:getymUserServicesResponse"/>
+
+  <xs:element name="login3rd" type="tns:login3rd"/>
+
+  <xs:element name="login3rdResponse" type="tns:login3rdResponse"/>
+
+  <xs:element name="matchmobile" type="tns:matchmobile"/>
+
+  <xs:element name="matchmobileResponse" type="tns:matchmobileResponse"/>
+
+  <xs:element name="pushCustomerState" type="tns:pushCustomerState"/>
+
+  <xs:element name="pushCustomerStateResponse" type="tns:pushCustomerStateResponse"/>
+
+  <xs:element name="regUserXN_YM" type="tns:regUserXN_YM"/>
+
+  <xs:element name="regUserXN_YMResponse" type="tns:regUserXN_YMResponse"/>
+
+  <xs:element name="sendServiceMsg" type="tns:sendServiceMsg"/>
+
+  <xs:element name="sendServiceMsgResponse" type="tns:sendServiceMsgResponse"/>
+
+  <xs:element name="unbindSupport" type="tns:unbindSupport"/>
+
+  <xs:element name="unbindSupportResponse" type="tns:unbindSupportResponse"/>
+
+  <xs:element name="uploadPic" type="tns:uploadPic"/>
+
+  <xs:element name="uploadPicResponse" type="tns:uploadPicResponse"/>
+
+  <xs:element name="userFeedback" type="tns:userFeedback"/>
+
+  <xs:element name="userFeedbackResponse" type="tns:userFeedbackResponse"/>
+
+  <xs:element name="userLogin" type="tns:userLogin"/>
+
+  <xs:element name="userLoginResponse" type="tns:userLoginResponse"/>
+
+  <xs:element name="ymghService" type="tns:ymghService"/>
+
+  <xs:element name="ymghServiceResponse" type="tns:ymghServiceResponse"/>
+
+  <xs:element name="ymjjService" type="tns:ymjjService"/>
+
+  <xs:element name="ymjjServiceResponse" type="tns:ymjjServiceResponse"/>
+
+  <xs:element name="ympzService" type="tns:ympzService"/>
+
+  <xs:element name="ympzServiceResponse" type="tns:ympzServiceResponse"/>
+
+  <xs:element name="ymzjService" type="tns:ymzjService"/>
+
+  <xs:element name="ymzjServiceResponse" type="tns:ymzjServiceResponse"/>
+
+  <xs:element name="ymzxService" type="tns:ymzxService"/>
+
+  <xs:element name="ymzxServiceResponse" type="tns:ymzxServiceResponse"/>
+
+  <xs:complexType name="userLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userLoginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="unbindSupport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="unbindSupportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendServiceMsg">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendServiceMsgResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="changeUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="changeUserInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getymUserServices">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getymUserServicesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="matchmobile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="matchmobileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getproxycardinfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getproxycardinfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userFeedbackResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymzjService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymzjServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createIDCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createIDCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bindSupport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bindSupportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymjjService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymjjServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="applyService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="applyServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ympzService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ympzServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="uploadPic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="uploadPicResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getproxyuserinfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getproxyuserinfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activeDZ">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activeDZResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getServicelog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getServicelogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activeymCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activeymCardResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getUserInfoCommon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getUserInfoCommonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="chpwd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="chpwdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProducts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProductsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymghService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymghServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSupportInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSupportInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymzxService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ymzxServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientTradeReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientTradeReportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="regUserXN_YM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="regUserXN_YMResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getUserInfoPrivate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getUserInfoPrivateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="login3rd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="login3rdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pushCustomerState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pushCustomerStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="login3rdResponse">
+    <wsdl:part element="tns:login3rdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userLogin">
+    <wsdl:part element="tns:userLogin" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSupportInfoResponse">
+    <wsdl:part element="tns:getSupportInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unbindSupport">
+    <wsdl:part element="tns:unbindSupport" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="uploadPicResponse">
+    <wsdl:part element="tns:uploadPicResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="matchmobileResponse">
+    <wsdl:part element="tns:matchmobileResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymzxServiceResponse">
+    <wsdl:part element="tns:ymzxServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeUserInfo">
+    <wsdl:part element="tns:changeUserInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getymUserServices">
+    <wsdl:part element="tns:getymUserServices" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createIDCodeResponse">
+    <wsdl:part element="tns:createIDCodeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymzjService">
+    <wsdl:part element="tns:ymzjService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clientTradeReportResponse">
+    <wsdl:part element="tns:clientTradeReportResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createIDCode">
+    <wsdl:part element="tns:createIDCode" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bindSupport">
+    <wsdl:part element="tns:bindSupport" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activeDZResponse">
+    <wsdl:part element="tns:activeDZResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getServicelogResponse">
+    <wsdl:part element="tns:getServicelogResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activeDZ">
+    <wsdl:part element="tns:activeDZ" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProducts">
+    <wsdl:part element="tns:getProducts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymghService">
+    <wsdl:part element="tns:ymghService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoCommonResponse">
+    <wsdl:part element="tns:getUserInfoCommonResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userFeedbackResponse">
+    <wsdl:part element="tns:userFeedbackResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clientTradeReport">
+    <wsdl:part element="tns:clientTradeReport" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="regUserXN_YM">
+    <wsdl:part element="tns:regUserXN_YM" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getymUserServicesResponse">
+    <wsdl:part element="tns:getymUserServicesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="regUserXN_YMResponse">
+    <wsdl:part element="tns:regUserXN_YMResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductsResponse">
+    <wsdl:part element="tns:getProductsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoPrivate">
+    <wsdl:part element="tns:getUserInfoPrivate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="chpwdResponse">
+    <wsdl:part element="tns:chpwdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendServiceMsg">
+    <wsdl:part element="tns:sendServiceMsg" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bindSupportResponse">
+    <wsdl:part element="tns:bindSupportResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userLoginResponse">
+    <wsdl:part element="tns:userLoginResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getproxyuserinfoResponse">
+    <wsdl:part element="tns:getproxyuserinfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="matchmobile">
+    <wsdl:part element="tns:matchmobile" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getproxycardinfo">
+    <wsdl:part element="tns:getproxycardinfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userFeedback">
+    <wsdl:part element="tns:userFeedback" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activeymCardResponse">
+    <wsdl:part element="tns:activeymCardResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymjjServiceResponse">
+    <wsdl:part element="tns:ymjjServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="applyServiceResponse">
+    <wsdl:part element="tns:applyServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeUserInfoResponse">
+    <wsdl:part element="tns:changeUserInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymjjService">
+    <wsdl:part element="tns:ymjjService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="applyService">
+    <wsdl:part element="tns:applyService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ympzService">
+    <wsdl:part element="tns:ympzService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymzjServiceResponse">
+    <wsdl:part element="tns:ymzjServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="uploadPic">
+    <wsdl:part element="tns:uploadPic" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendServiceMsgResponse">
+    <wsdl:part element="tns:sendServiceMsgResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pushCustomerStateResponse">
+    <wsdl:part element="tns:pushCustomerStateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getproxyuserinfo">
+    <wsdl:part element="tns:getproxyuserinfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getServicelog">
+    <wsdl:part element="tns:getServicelog" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activeymCard">
+    <wsdl:part element="tns:activeymCard" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoCommon">
+    <wsdl:part element="tns:getUserInfoCommon" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="chpwd">
+    <wsdl:part element="tns:chpwd" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSupportInfo">
+    <wsdl:part element="tns:getSupportInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymzxService">
+    <wsdl:part element="tns:ymzxService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getproxycardinfoResponse">
+    <wsdl:part element="tns:getproxycardinfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ymghServiceResponse">
+    <wsdl:part element="tns:ymghServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserInfoPrivateResponse">
+    <wsdl:part element="tns:getUserInfoPrivateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ympzServiceResponse">
+    <wsdl:part element="tns:ympzServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unbindSupportResponse">
+    <wsdl:part element="tns:unbindSupportResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="login3rd">
+    <wsdl:part element="tns:login3rd" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pushCustomerState">
+    <wsdl:part element="tns:pushCustomerState" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TransferDataWebService">
+    <wsdl:operation name="userLogin">
+      <wsdl:input message="tns:userLogin" name="userLogin">
+    </wsdl:input>
+      <wsdl:output message="tns:userLoginResponse" name="userLoginResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unbindSupport">
+      <wsdl:input message="tns:unbindSupport" name="unbindSupport">
+    </wsdl:input>
+      <wsdl:output message="tns:unbindSupportResponse" name="unbindSupportResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendServiceMsg">
+      <wsdl:input message="tns:sendServiceMsg" name="sendServiceMsg">
+    </wsdl:input>
+      <wsdl:output message="tns:sendServiceMsgResponse" name="sendServiceMsgResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeUserInfo">
+      <wsdl:input message="tns:changeUserInfo" name="changeUserInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:changeUserInfoResponse" name="changeUserInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getymUserServices">
+      <wsdl:input message="tns:getymUserServices" name="getymUserServices">
+    </wsdl:input>
+      <wsdl:output message="tns:getymUserServicesResponse" name="getymUserServicesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="matchmobile">
+      <wsdl:input message="tns:matchmobile" name="matchmobile">
+    </wsdl:input>
+      <wsdl:output message="tns:matchmobileResponse" name="matchmobileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getproxycardinfo">
+      <wsdl:input message="tns:getproxycardinfo" name="getproxycardinfo">
+    </wsdl:input>
+      <wsdl:output message="tns:getproxycardinfoResponse" name="getproxycardinfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userFeedback">
+      <wsdl:input message="tns:userFeedback" name="userFeedback">
+    </wsdl:input>
+      <wsdl:output message="tns:userFeedbackResponse" name="userFeedbackResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymzjService">
+      <wsdl:input message="tns:ymzjService" name="ymzjService">
+    </wsdl:input>
+      <wsdl:output message="tns:ymzjServiceResponse" name="ymzjServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createIDCode">
+      <wsdl:input message="tns:createIDCode" name="createIDCode">
+    </wsdl:input>
+      <wsdl:output message="tns:createIDCodeResponse" name="createIDCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bindSupport">
+      <wsdl:input message="tns:bindSupport" name="bindSupport">
+    </wsdl:input>
+      <wsdl:output message="tns:bindSupportResponse" name="bindSupportResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymjjService">
+      <wsdl:input message="tns:ymjjService" name="ymjjService">
+    </wsdl:input>
+      <wsdl:output message="tns:ymjjServiceResponse" name="ymjjServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyService">
+      <wsdl:input message="tns:applyService" name="applyService">
+    </wsdl:input>
+      <wsdl:output message="tns:applyServiceResponse" name="applyServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ympzService">
+      <wsdl:input message="tns:ympzService" name="ympzService">
+    </wsdl:input>
+      <wsdl:output message="tns:ympzServiceResponse" name="ympzServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadPic">
+      <wsdl:input message="tns:uploadPic" name="uploadPic">
+    </wsdl:input>
+      <wsdl:output message="tns:uploadPicResponse" name="uploadPicResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getproxyuserinfo">
+      <wsdl:input message="tns:getproxyuserinfo" name="getproxyuserinfo">
+    </wsdl:input>
+      <wsdl:output message="tns:getproxyuserinfoResponse" name="getproxyuserinfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activeDZ">
+      <wsdl:input message="tns:activeDZ" name="activeDZ">
+    </wsdl:input>
+      <wsdl:output message="tns:activeDZResponse" name="activeDZResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicelog">
+      <wsdl:input message="tns:getServicelog" name="getServicelog">
+    </wsdl:input>
+      <wsdl:output message="tns:getServicelogResponse" name="getServicelogResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activeymCard">
+      <wsdl:input message="tns:activeymCard" name="activeymCard">
+    </wsdl:input>
+      <wsdl:output message="tns:activeymCardResponse" name="activeymCardResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoCommon">
+      <wsdl:input message="tns:getUserInfoCommon" name="getUserInfoCommon">
+    </wsdl:input>
+      <wsdl:output message="tns:getUserInfoCommonResponse" name="getUserInfoCommonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chpwd">
+      <wsdl:input message="tns:chpwd" name="chpwd">
+    </wsdl:input>
+      <wsdl:output message="tns:chpwdResponse" name="chpwdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input message="tns:getProducts" name="getProducts">
+    </wsdl:input>
+      <wsdl:output message="tns:getProductsResponse" name="getProductsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymghService">
+      <wsdl:input message="tns:ymghService" name="ymghService">
+    </wsdl:input>
+      <wsdl:output message="tns:ymghServiceResponse" name="ymghServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupportInfo">
+      <wsdl:input message="tns:getSupportInfo" name="getSupportInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:getSupportInfoResponse" name="getSupportInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymzxService">
+      <wsdl:input message="tns:ymzxService" name="ymzxService">
+    </wsdl:input>
+      <wsdl:output message="tns:ymzxServiceResponse" name="ymzxServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientTradeReport">
+      <wsdl:input message="tns:clientTradeReport" name="clientTradeReport">
+    </wsdl:input>
+      <wsdl:output message="tns:clientTradeReportResponse" name="clientTradeReportResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="regUserXN_YM">
+      <wsdl:input message="tns:regUserXN_YM" name="regUserXN_YM">
+    </wsdl:input>
+      <wsdl:output message="tns:regUserXN_YMResponse" name="regUserXN_YMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoPrivate">
+      <wsdl:input message="tns:getUserInfoPrivate" name="getUserInfoPrivate">
+    </wsdl:input>
+      <wsdl:output message="tns:getUserInfoPrivateResponse" name="getUserInfoPrivateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login3rd">
+      <wsdl:input message="tns:login3rd" name="login3rd">
+    </wsdl:input>
+      <wsdl:output message="tns:login3rdResponse" name="login3rdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pushCustomerState">
+      <wsdl:input message="tns:pushCustomerState" name="pushCustomerState">
+    </wsdl:input>
+      <wsdl:output message="tns:pushCustomerStateResponse" name="pushCustomerStateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransferDataWebServiceServiceSoapBinding" type="tns:TransferDataWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="userLogin">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="userLogin">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="userLoginResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unbindSupport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="unbindSupport">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="unbindSupportResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendServiceMsg">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendServiceMsg">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendServiceMsgResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeUserInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="changeUserInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeUserInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getymUserServices">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getymUserServices">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getymUserServicesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="matchmobile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="matchmobile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="matchmobileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getproxycardinfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getproxycardinfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getproxycardinfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userFeedback">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="userFeedback">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="userFeedbackResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymzjService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ymzjService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ymzjServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createIDCode">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createIDCode">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createIDCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bindSupport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="bindSupport">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bindSupportResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymjjService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ymjjService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ymjjServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="applyService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="applyServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ympzService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ympzService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ympzServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadPic">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="uploadPic">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="uploadPicResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getproxyuserinfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getproxyuserinfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getproxyuserinfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activeDZ">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="activeDZ">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activeDZResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicelog">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getServicelog">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServicelogResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activeymCard">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="activeymCard">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activeymCardResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoCommon">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getUserInfoCommon">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserInfoCommonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chpwd">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="chpwd">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="chpwdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProducts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymghService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ymghService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ymghServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupportInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSupportInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSupportInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ymzxService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ymzxService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ymzxServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientTradeReport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="clientTradeReport">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clientTradeReportResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="regUserXN_YM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="regUserXN_YM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="regUserXN_YMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfoPrivate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getUserInfoPrivate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserInfoPrivateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login3rd">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="login3rd">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="login3rdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pushCustomerState">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="pushCustomerState">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pushCustomerStateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransferDataWebServiceService">
+    <wsdl:port binding="tns:TransferDataWebServiceServiceSoapBinding" name="TransferDataWebServicePort">
+      <soap:address location="http://112.74.20.88/TransferServer/transferService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

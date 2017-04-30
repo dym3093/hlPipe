@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.hpin.webservice.bean.ErpReportAuthority" table="ERP_REPORT_AUTHORITY">
+		<id name="id" type="java.lang.String">
+			<column name="ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="projectNo" type="java.lang.String">
+			<column name="PROJECT_NO"/>
+		</property>
+		<property name="filterNo" type="java.lang.String">
+			<column name="FILTER_NO"/>
+		</property>
+		<property name="reserve1" type="java.lang.String">
+			<column name="RESERVE1"/>
+		</property>
+		<property name="reserve2" type="java.lang.String">
+			<column name="RESERVE2"/>
+		</property>
+		<property name="reserve3" type="java.lang.String">
+			<column name="RESERVE3"/>
+		</property>
+		<property name="reserve4" type="java.lang.String">
+			<column name="RESERVE4"/>
+		</property>
+		<property name="isDeleted" type="java.lang.Integer">
+			<column name="IS_DELETED"/>
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK"/>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="CREATE_TIME"/>
+		</property>
+		<property name="createUserId" type="java.lang.String">
+			<column name="CREATE_USER_ID"/>
+		</property>
+		<property name="createUser" type="java.lang.String">
+			<column name="CREATE_USER"/>
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="UPDATE_TIME"/>
+		</property>
+		<property name="updateUserId" type="java.lang.String">
+			<column name="UPDATE_USER_ID"/>
+		</property>
+		<property name="updateUser" type="java.lang.String">
+			<column name="UPDATE_USER"/>
+		</property>
+		<property name="status" type="java.lang.Integer">
+			<column name="STATUS"/>
+		</property>
+	</class>
+</hibernate-mapping>

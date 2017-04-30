@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hpin.common.log.entity.ModifyHistoryItem"
+		table="LOG_HISTORY_ITEM">
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="fieldName" column="FIELD_NAME" length="256"></property>
+		<property name="fieldDesc" column="FIELD_DESC" length="512"></property>
+		<property name="oldValue" column="OLD_VALUE" length="512"></property>
+		<property name="newValue" column="NEW_VALUE" length="512"></property>
+		<property name="historyId" column="HISTORY_ID" length = "50"></property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME"/>
+        </property>
+		<many-to-one name="modifyHistory" insert="false" update="false" column="HISTORY_ID" class="org.hpin.common.log.entity.ModifyHistory" lazy="false"></many-to-one> 
+	</class>
+</hibernate-mapping>
+

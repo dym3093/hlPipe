@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.ty.ErpValidCodeDetail" table="ERP_VALID_CODE_DETAIL" schema="YMJY">
+        <id name="id" type="java.lang.String">
+            <column name="ID"  />
+            <generator class="uuid"></generator>
+        </id>
+        <property name="validCode" type="java.lang.String">
+            <column name="VALID_CODE"/>
+        </property>
+        <property name="isUsed" type="java.lang.String">
+            <column name="IS_USED"/>
+        </property>
+        <property name="att1" type="java.lang.String">
+            <column name="ATT1"/>
+        </property>
+        <property name="att2" type="java.lang.String">
+            <column name="ATT2"/>
+        </property>
+        <property name="att3" type="java.lang.String">
+            <column name="ATT3"/>
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME"/>
+        </property>
+        <property name="createUserId" type="java.lang.String">
+            <column name="CREATE_USER_ID"/>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME"/>
+        </property>
+        <property name="updateUserId" type="java.lang.String">
+            <column name="UPDATE_USER_ID"/>
+        </property>
+        <property name="isDeleted" type="java.lang.Integer">
+            <column name="IS_DELETED"/>
+        </property>
+        <property name="branchId" type="java.lang.String">
+            <column name="BRANCH_ID"/>
+        </property><property name="projectId" type="java.lang.String">
+            <column name="PROJECT_ID"/>
+        </property>
+   	</class>
+</hibernate-mapping>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.ReportCustomerInfo" table="ERP_REPORT_CUSTOMER_INFO">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="code" type="java.lang.String">
+            <column name="CODE" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE"  />
+        </property>
+        <property name="combo" type="java.lang.String">
+            <column name="COMBO" />
+        </property>
+        <property name="batch" type="java.lang.String">
+            <column name="BATCH" />
+        </property>
+        <property name="receivedDate" type="java.util.Date">
+            <column name="RECEIVED_DATE" />
+        </property>
+        <property name="reportLaunchDate" type="java.util.Date">
+            <column name="REPORT_LAUNCH_DATE" />
+        </property>
+        <property name="reportAccountName" type="java.lang.String">
+            <column name="REPORT_ACCOUNT_NAME" />
+        </property>
+        <property name="reportAccountPass" type="java.lang.String">
+            <column name="REPORT_ACCOUNT_PASS" />
+        </property>
+           <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" />
+        </property>
+        
+        <property name="createUserId" type="java.lang.String">
+            <column name="CREATE_USER_ID"/>
+        </property>
+		<property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME"/>
+        </property>
+        
+		 <property name="updateUserId" type="java.lang.String">
+            <column name="UPDATE_USER_ID" />
+        </property>
+        
+         <property name="isDeleted" type="java.lang.Integer">
+            <column name="IS_DELETED" />
+        </property>
+        
+        <property name="reportId" type="java.lang.String">
+            <column name="REPORT_ID" />
+        </property>
+        
+         <property name="reportNum" type="java.lang.String">
+            <column name="REPORT_NUM" />
+        </property>
+         <property name="isSuccess" type="java.lang.Integer">
+            <column name="IS_SUCCESS" />
+        </property>
+         
+    </class>
+</hibernate-mapping>

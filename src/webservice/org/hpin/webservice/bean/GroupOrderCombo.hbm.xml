@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hpin.webservice.bean.GroupOrderCombo" table="ERP_GROUP_ORDER_COMBO" dynamic-insert="true" dynamic-update="true">
+	
+		<id name="id" type="java.lang.String">
+			<column name="ID"/>
+			<generator class="uuid" />
+		</id>
+
+		<property name="orderNo" type="java.lang.String">
+			<column name="orderNo"/>
+		</property>
+		<property name="comboName" type="java.lang.String">
+			<column name="comboName"/>
+		</property>
+		<property name="comboNum" type="java.lang.String">
+			<column name="comboNum"/>
+		</property>
+	</class>
+</hibernate-mapping>

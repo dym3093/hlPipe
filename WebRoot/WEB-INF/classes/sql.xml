@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql_list>
+
+    <!-- 微磁查询JPG报告 -->
+    <!-- 2017-03-31 -->
+    <!--Damian-->
+    <sql id="FIND_IMG_WEICI" >
+    <![CDATA[
+        SELECT
+            i.IMGPATH IMGPATH,
+            ( SELECT CODE FROM ERP_REPORTDETAIL_IMGTASK WHERE id = i.TASKID ) CODE
+        FROM
+            ERP_REPORTDETAIL_IMGINFO i
+        WHERE 1 = 1
+            AND i.ISDELETED = 0
+            AND i.TASKID =(
+                SELECT t.ID FROM ERP_REPORTDETAIL_IMGTASK t WHERE 1 = 1 AND t.ISDELETED = 0 AND t.STATE = 1 AND t.USERNAME =? AND t.PHONENO =? AND t.CODE LIKE 'C%'
+                    AND t.CREATETIME = ( SELECT MAX( k.CREATETIME ) FROM ERP_REPORTDETAIL_IMGTASK k WHERE 1 = 1 AND k.ISDELETED = 0 AND k.STATE = 1 AND k.CODE IN(t.CODE) )
+            )
+        ORDER BY LENGTH(i.IMGORDER), i.IMGORDER ASC
+    ]]>
+    </sql>
+
+    <!-- 无创生物电查询JPG报告 -->
+    <!-- 2017-03-31 -->
+    <!--Damian-->
+    <sql id="FIND_IMG_BLY" >
+    <![CDATA[
+        SELECT
+            i.IMGPATH IMGPATH,
+            ( SELECT CODE FROM ERP_REPORTDETAIL_IMGTASK WHERE id = i.TASKID ) CODE
+        FROM
+        ERP_REPORTDETAIL_IMGINFO i
+        WHERE 1 = 1
+            AND i.ISDELETED = 0
+            AND i.TASKID =(
+                SELECT t.ID FROM ERP_REPORTDETAIL_IMGTASK t WHERE 1 = 1 AND t.ISDELETED = 0 AND t.STATE = 1 AND t.USERNAME =? AND t.PHONENO =? AND t.IDNO =? AND t.CODE LIKE 'W%'
+                AND t.CREATETIME =( SELECT MAX( k.CREATETIME ) FROM ERP_REPORTDETAIL_IMGTASK k WHERE 1 = 1 AND k.ISDELETED = 0 AND k.STATE = 1 AND k.CODE IN(t.CODE) )
+            )
+        ORDER BY LENGTH(i.IMGORDER), i.IMGORDER ASC
+    ]]>
+    </sql>
+
+    <!-- 查询检测人员年龄 -->
+    <!-- 2017-03-31 -->
+    <!--Damian-->
+    <sql id="FIND_AGE_WC">
+    <![CDATA[
+        SELECT AGE FROM ERP_CUSTOMER_TEMP_WUCHUANG  WHERE CODE = ?
+    ]]>
+    </sql>
+
+</sql_list>

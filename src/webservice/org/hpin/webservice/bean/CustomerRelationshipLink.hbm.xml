@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.CustomerRelationshipLink" table="HL_CUSTOMER_RELATIONSHIP_LINK"  dynamic-update="true" dynamic-insert="true">
+        <id name="id" type="java.lang.String">
+            <column name="ID" length="32" />
+            <generator class="uuid" />
+        </id>
+        
+        <property name="num" type="java.lang.Integer">
+            <column name="NUM"/>
+        </property>
+        
+        <property name="linkMan" type="java.lang.String">
+            <column name="LINK_MAN"/>
+        </property>
+        
+        <property name="sex" type="java.lang.String">
+            <column name="SEX"/>
+        </property>
+        
+          <property name="department" type="java.lang.String">
+            <column name="DEPARTMENT"/>
+        </property>
+        
+        <property name="position" type="java.lang.String">
+            <column name="POSITION"/>
+        </property>
+        
+        <property name="functions" type="java.lang.String">
+            <column name="FUNCTIONS"/>
+        </property>
+        
+        <property name="qq" type="java.lang.String">
+            <column name="QQ"/>
+        </property>
+        
+        <property name="tel" type="java.lang.String">
+            <column name="TEL"/>
+        </property>
+        
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        
+        <property name="fax" type="java.lang.String">
+            <column name="FAX"/>
+        </property>
+        
+         <property name="email" type="java.lang.String">
+            <column name="EMAIL"/>
+        </property>
+        
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT"/>
+        </property>
+        
+        <property name="personName" type="java.lang.String">
+            <column name="PERSON_NAME"/>
+        </property>
+        
+        <property name="bank" type="java.lang.String">
+            <column name="BANK"/>
+        </property>
+        
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME"/>
+        </property>
+        
+        <property name="createUserId" type="java.lang.String">
+            <column name="CREATE_USER_ID"/>
+        </property>
+        
+        <property name="isDeleted" type="java.lang.Integer">
+            <column name="IS_DELETED"/>
+        </property>
+        
+        <property name="deleteTime" type="java.util.Date">
+            <column name="DELETE_TIME"/>
+        </property>
+        
+        <property name="deleteUserId" type="java.lang.String">
+            <column name="DELETE_USER_ID" />
+        </property>
+        
+        <property name="deptId" type="java.lang.String">
+            <column name="DEPT_ID"/>
+        </property>
+        
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME"/>
+        </property>
+        
+        <property name="updateUserId" type="java.lang.String">
+            <column name="UPDATE_USER_ID"/>
+        </property>
+        
+         <property name="customerRelationShipName" type="java.lang.String" >
+            <column name="CUSTOMER_RELATIONSHIP_NAME"/>
+        </property>
+        
+        <property name="customerRelationShipId" type="java.lang.String" insert="false" update="false">
+            <column name="CUSTOMER_RELATIONSHIP_ID"/>
+        </property>
+       
+    <many-to-one name="customerRelationShip" column="CUSTOMER_RELATIONSHIP_ID" cascade="save-update" class="org.hpin.webservice.bean.CustomerRelationShip"/>
+    </class>
+</hibernate-mapping>

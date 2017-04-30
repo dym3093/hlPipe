@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hpin.webservice.bean.GroupOrderInfo" table="ERP_GROUP_ORDER_INFO" dynamic-insert="true" dynamic-update="true">
+	
+		<id name="id" type="java.lang.String">
+			<column name="ID"/>
+			<generator class="uuid" />
+		</id>
+
+		<property name="orderNo" type="java.lang.String">
+			<column name="orderNo"/>
+		</property>
+		<property name="orderDate" type="java.util.Date">
+			<column name="orderDate" />
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME"/>
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="PHONE" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="address" />
+		</property>
+		<property name="type" type="java.lang.String">
+			<column name="type" />
+		</property>
+		<property name="price" type="java.math.BigDecimal">
+			<column name="price" />
+		</property>
+	</class>
+</hibernate-mapping>

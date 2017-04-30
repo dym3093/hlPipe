@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.ErpCustomerTempWuChuang" table="ERP_CUSTOMER_TEMP_WUCHUANG">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="branchCompanyId" type="java.lang.String">
+            <column name="BRANCH_COMPANY_ID" />
+        </property>
+        <property name="branchCompany" type="java.lang.String">
+            <column name="BRANCH_COMPANY" />
+        </property>
+        <property name="ownedCompany" type="java.lang.String">
+            <column name="OWNED_COMPANY" />
+        </property>
+        <property name="ownedCompanyId" type="java.lang.String">
+            <column name="OWNED_COMPANY_ID" />
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="CODE" />
+        </property>
+        <property name="testInstitution" type="java.lang.String">
+            <column name="TEST_INSTITUTION" />
+        </property>
+        <property name="salesMan" type="java.lang.String">
+            <column name="SALES_MAN" />
+        </property>
+        <property name="salesManNo" type="java.lang.String">
+            <column name="SALES_MAN_NO" />
+        </property>
+        <property name="familyHistory" type="java.lang.String">
+            <column name="FAMILY_HISTORY" />
+        </property>
+        <property name="customerhistory" type="java.lang.String">
+            <column name="CUSTOMERHISTORY" />
+        </property>
+        <property name="idno" type="java.lang.String">
+            <column name="IDNO" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="age" type="java.lang.String">
+            <column name="AGE" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        <property name="height" type="java.lang.String">
+            <column name="HEIGHT" />
+        </property>
+        <property name="weight" type="java.lang.String">
+            <column name="WEIGHT" />
+        </property>
+        <property name="guardianname" type="java.lang.String">
+            <column name="GUARDIANNAME" />
+        </property>
+        <property name="guardianphone" type="java.lang.String">
+            <column name="GUARDIANPHONE" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="isMatch" type="java.lang.String">
+            <column name="IS_MATCH" />
+        </property>
+        <property name="birthday" type="java.lang.String">
+            <column name="BIRTHDAY" />
+        </property>
+        <property name="projectType" type="java.lang.String">
+            <column name="PROJECT_TYPE" />
+        </property>
+        <property name="bloodType" type="java.lang.String">
+            <column name="BLOOD_TYPE" />
+        </property>
+        <property name="openId" type="java.lang.String">
+            <column name="OPEN_ID" />
+        </property>
+        <property name="salesChannel" type="java.lang.String">
+            <column name="SALES_CHANNEL" />
+        </property>
+    </class>
+</hibernate-mapping>

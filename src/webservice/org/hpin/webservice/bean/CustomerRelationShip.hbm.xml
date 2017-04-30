@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.CustomerRelationShip" table="HL_CUSTOMER_RELATIONSHIP"  dynamic-update="true" dynamic-insert="true">
+        <id name="id" type="java.lang.String">
+            <column name="ID" length="32" />
+            <generator class="uuid" />
+        </id>
+        <property name="companyCode" type="java.lang.String">
+            <column name="COMPANY_CODE" length="400" />
+        </property>
+        <property name="tel" type="java.lang.String">
+            <column name="TEL" length="400" />
+        </property>
+        <property name="branchCommany" type="java.lang.String">
+            <column name="BRANCH_COMMANY" length="400" />
+        </property>
+        <property name="ownedCompany" type="java.lang.String">
+            <column name="OWNED_COMPANY" length="400" />
+        </property>
+         <property name="salesman" type="java.lang.String">
+            <column name="SALESMAN" length="400" />
+        </property>
+        <property name="province" type="java.lang.String">
+            <column name="PROVINCE" length="400" />
+        </property>
+         <property name="city" type="java.lang.String">
+            <column name="CITEY" length="400" />
+        </property>
+          <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="400" />
+        </property>
+        <property name="orgNature" type="java.lang.String">
+            <column name="ORG_NATURE" length="400" />
+        </property>
+        <property name="superiorOrgId" type="java.lang.String">
+            <column name="SUPERIOR_ORG_ID" length="400" />
+        </property>
+          <property name="address" type="java.lang.String">
+            <column name="ADDRESS" length="400" />
+        </property>
+         <property name="customerType" type="java.lang.String">
+            <column name="CUSTOM_TYPE" length="400" />
+        </property>
+        <property name="deptId" type="java.lang.String">
+            <column name="DEPT_ID" length="400" />
+        </property>
+        <property name="customerNameSimple" type="java.lang.String">
+            <column name="CUSTOMER_NAME_SIMPLE" length="400" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" length="7" />
+        </property>
+        <property name="createUserId" type="java.lang.String">
+            <column name="CREATE_USER_ID" length="32" />
+        </property>
+        <property name="isDeleted" type="java.lang.Integer">
+            <column name="IS_DELETED" precision="4" scale="0"/>
+        </property>
+        <property name="deleteTime" type="java.util.Date">
+            <column name="DELETE_TIME" length="7" />
+        </property>
+        <property name="deleteUserId" type="java.lang.String">
+            <column name="DELETE_USER_ID" length="32" />
+        </property>
+       <property name="combo" type="java.lang.String">
+            <column name="COMBO" length="32" />
+        </property>
+       <property name="customerNameShort" type="java.lang.String">
+            <column name="CUSTOMER_NAME_SHORT" length="400" />
+        </property>
+        
+        <!-- <set name="customerBankSet" fetch="select" lazy="true" order-by="NUM ASC" inverse="true">
+			<key column="CUSTOMER_ID"/>
+			<one-to-many class="org.hpin.customer.entity.CustomerBank"/>
+		</set>
+		<set name="contractSet" fetch="select" lazy="true" order-by="NUM ASC" inverse="true">
+			<key column="CUSTOMER_ID"/>
+			<one-to-many class="org.ymjy.combo.entity.Combo"/>
+		</set> -->
+		
+		<!-- 一个支公司对应多个套餐 
+		<set name="customerRelationshipComboSet" fetch="select" lazy="true" order-by="NUM ASC">
+			<key column="CUTOMER_ID"/>
+			<one-to-many class="org.ymjy.combo.entity.Combo"/>
+		</set>-->
+        <!-- 一个支公司对应多个联系人 -->
+		<set name="customerRelationshipLinkSet" fetch="select" lazy="true" order-by="NUM ASC">
+			<key column="CUSTOMER_RELATIONSHIP_ID"/>
+			<one-to-many class="org.hpin.webservice.bean.CustomerRelationshipLink"/>
+		</set>
+		
+		
+		<!-- 
+			 * 根据需求28,添加字段.
+			 * 项目负责人:proUser
+			 * 项目归属:proBelong
+			 * 项目编码:proCode
+			 * 收件人:recipients
+			 * 收件人电话:recipientsTEL
+			 * 邮寄地址:mailAddr
+			 * create by henry.xu 2016.8.10;
+		 -->
+		 <property name="proUser" type="java.lang.String">
+            <column name="PRO_USER" length="400" />
+         </property>
+		 <property name="proBelong" type="java.lang.String">
+            <column name="PRO_BELONG" length="400" />
+         </property>
+		 <property name="proCode" type="java.lang.String">
+            <column name="PRO_CODE" length="400" />
+         </property>
+		 <property name="recipients" type="java.lang.String">
+            <column name="RECIPIENTS" length="400" />
+         </property>
+		 <property name="recipientsTel" type="java.lang.String">
+            <column name="RECIPIENTS_TEL" length="400" />
+         </property>
+		 <property name="mailAddr" type="java.lang.String">
+            <column name="MAILADDR" length="400" />
+         </property>
+		 
+    </class>
+</hibernate-mapping>

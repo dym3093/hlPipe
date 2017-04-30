@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.ErpCustomerReceive" table="ERP_CUSTOMER_RECEIVE">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="batchNo" type="java.lang.String">
+            <column name="BATCHNO" />
+        </property>
+        <property name="serviceCode" type="java.lang.String">
+            <column name="SERVICECODE" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="birthday" type="java.lang.String">
+            <column name="BIRTHDAY" />
+        </property>
+        <property name="companyId" type="java.lang.String">
+            <column name="BRANCHCOMPANYID" />
+        </property>
+        <property name="companyName" type="java.lang.String">
+            <column name="BRANCHCOMPANYNAME" />
+        </property>
+        <property name="ownerCompanyId" type="java.lang.String">
+            <column name="OWNERCOMPANYID" />
+        </property>
+        <property name="ownerCompanyName" type="java.lang.String">
+            <column name="OWNERCOMPANYNAME" />
+        </property>
+        <property name="examDate" type="java.lang.String">
+            <column name="EXAMDATE" />
+        </property>
+        <property name="examTime" type="java.lang.String">
+            <column name="EXAMTIME" />
+        </property>
+        <property name="eventsType" type="java.lang.String">
+            <column name="EVENTSTYPE" />
+        </property>
+        <property name="isMatch" type="java.lang.String">
+            <column name="ISMATCH" />
+        </property>
+        <property name="returnFlag" type="java.lang.String">
+            <column name="RETURNFLAG" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME" />
+        </property>
+        <property name="other" type="java.lang.String">
+            <column name="OTHER" />
+        </property>
+        <property name="sourceFrom" type="java.lang.String">
+            <column name="SOURCE_FROM" />
+        </property>
+        <property name="projectType" type="java.lang.String">
+            <column name="PROJECT_TYPE" />
+        </property>
+        <property name="reportType" type="java.lang.String">
+            <column name="REPORT_TYPE" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

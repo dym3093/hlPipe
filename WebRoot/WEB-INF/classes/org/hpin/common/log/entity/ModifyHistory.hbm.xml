@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hpin.common.log.entity.ModifyHistory" table="LOG_HISTORY">
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="parentClazz" column="parent_clazz" length="128"></property>
+		<property name="parentPrimaryKey" column="parent_primary_key" length="36"></property>
+		<property name="targetClazz" column="target_clazz" length="128"></property>
+		<property name="targetPrimaryKey" column="target_primary_key" length="36"></property>
+		<property name="updateTime" column="UPDATE_TIME"></property>
+		<property name="updateUserId" column="UPDATE_USER_ID" length="36"></property>
+		<property name="operType" column="OPER_TYPE" length="36"></property>
+		<property name="state" column="STATE" length="10"></property>
+		<set name="items" cascade="all" lazy="false">
+			<key column="HISTORY_ID"></key> 
+			<one-to-many class="org.hpin.common.log.entity.ModifyHistoryItem"/> 
+		</set>
+	</class>
+</hibernate-mapping>
+

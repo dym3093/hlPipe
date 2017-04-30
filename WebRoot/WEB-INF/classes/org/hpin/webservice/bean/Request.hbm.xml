@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hpin.webservice.bean.Request" table="ERP_GENEREPORT_INFO" dynamic-insert="true" dynamic-update="true">
+	
+        <id name="id" type="java.lang.String">
+            <column name="ID"/>
+            <generator class="uuid" />
+        </id>
+    				
+		<property name="code" type="java.lang.String">
+			<column name="CODE" length="100" />
+		</property>
+	  <property name="name" type="java.lang.String">
+			<column name="NAME" length="100" />
+		</property>
+		<property name="sex" type="java.lang.String">
+			<column name="SEX" length="100" />
+		</property>
+	  <property name="age" type="java.lang.String">
+			<column name="AGE" length="100" />
+		</property>	   
+		<property name="phone" type="java.lang.String">
+			<column name="PHONE" length="100" />
+		</property>
+	  <property name="branchcompany" type="java.lang.String">
+			<column name="BRANCHCOMPANY" length="200" />
+		</property>
+		<property name="project" type="java.lang.String">
+			<column name="PROJECT" length="200" />
+		</property>
+	  <property name="sampletype" type="java.lang.String">
+			<column name="SAMPLETYPE" length="200" />
+		</property>		   
+		<property name="salesman" type="java.lang.String">
+			<column name="SALESMAN" length="100" />
+		</property>
+	  <property name="entering" type="java.lang.String">
+			<column name="ENTERING" length="100" />
+		</property>
+		<property name="institution" type="java.lang.String">
+			<column name="INSTITUTION" length="100" />
+		</property>
+	  <property name="samplingdate" type="java.lang.String">
+			<column name="SAMPLINGDATE" length="100" />
+		</property>		
+		<property name="collectiondate" type="java.lang.String">
+			<column name="COLLECTIONDATE" length="100" />
+		</property>
+	  <property name="simplestatus" type="java.lang.String">
+			<column name="SIMPLESTATUS" length="100" />
+		</property>
+		<property name="page" type="java.lang.String">
+			<column name="PAGE" length="100" />
+		</property>
+	  <property name="filepath" type="java.lang.String">
+			<column name="FILEPATH" length="1000" />
+		</property>	
+		     
+		<property name="createTime" type="java.util.Date">
+			<column name="CREATE_TIME" />
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

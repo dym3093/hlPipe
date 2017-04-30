@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.CustomerRelationshipCombo" table="HL_CUSTOMER_RELATIONSHIP_COMBO" >
+        <id name="id" type="java.lang.String">
+            <column name="ID" length="32" />
+            <generator class="uuid" />
+        </id>
+        <property name="customerRelationShipId" type="java.lang.String">
+            <column name="CUTOMER_RELATIONSHIP_ID" length="32" />
+        </property>
+        <property name="comboId" type="java.lang.String">
+            <column name="COMBO_ID" length="32" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="Name" length="400" />
+        </property>
+         <many-to-one name="customerRelationShip" class="org.hpin.webservice.bean.CustomerRelationShip"
+			fetch="select" insert="false" update="false">
+			<column name="CUTOMER_RELATIONSHIP_ID" />
+		</many-to-one>
+        <many-to-one name="combo"  class="org.hpin.webservice.bean.CustomerRelationshipCombo"
+        insert="false" update="false" >
+        	<column name="COMBO_ID"  />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

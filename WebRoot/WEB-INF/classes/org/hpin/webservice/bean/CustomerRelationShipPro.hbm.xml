@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.hpin.webservice.bean.CustomerRelationShipPro" table="HL_CUSTOMER_RELATIONSHIP_PRO"  dynamic-update="true" dynamic-insert="true">
+        <id name="id" type="java.lang.String">
+            <column name="ID" length="32" />
+            <generator class="uuid" />
+        </id>
+        <property name="customerRelationShipId" type="java.lang.String">
+            <column name="CUSTOMER_RELATIONSHIP_ID" length="32" />
+        </property>
+        <property name="projectCode" type="java.lang.String">
+            <column name="PROJECT_CODE" length="200" />
+        </property>
+        <property name="projectName" type="java.lang.String">
+            <column name="PROJECT_NAME" length="200" />
+        </property>
+        <property name="projectOwner" type="java.lang.String">
+            <column name="PROJECT_OWNER" length="200" />
+        </property>
+         <property name="projectType" type="java.lang.String">
+            <column name="PROJECT_TYPE" length="200" />
+        </property>
+        <property name="linkName" type="java.lang.String">
+            <column name="LINK_NAME" length="200" />
+        </property>
+         <property name="linkTel" type="java.lang.String">
+            <column name="LINK_TEL" length="200" />
+        </property>
+          <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="200" />
+        </property>
+        <property name="mailAddress" type="java.lang.String">
+            <column name="MAIL_ADDRESS" length="200" />
+        </property>
+        <property name="reception" type="java.lang.String">
+            <column name="RECEPTION" length="200" />
+        </property>
+          <property name="receptionTel" type="java.lang.String">
+            <column name="RECEPTION_TEL" length="200" />
+        </property>
+         <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" precision="7"/>
+        </property>
+        <property name="createUserId" type="java.lang.String">
+            <column name="CREATE_USER_ID" length="200" />
+        </property>
+        <property name="isDeleted" type="java.lang.String">
+            <column name="IS_DELETED" length="200" />
+        </property>
+        <property name="deleteTime" type="java.util.Date">
+            <column name="DELETE_TIME" length="7" />
+        </property>
+        <property name="deleteUserId" type="java.lang.String">
+            <column name="DELETE_USER_ID" length="200" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME" precision="7" />
+        </property>
+        <property name="updateUserId" type="java.lang.String">
+            <column name="UPDATE_USER_ID" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

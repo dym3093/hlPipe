@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hpin.webservice.bean.OrderInfo" table="ERP_ORDER_INFO" dynamic-insert="true" dynamic-update="true">
+	
+		<id name="id" type="java.lang.String">
+			<column name="ID"/>
+			<generator class="uuid" />
+		</id>
+
+		<property name="orderNo" type="java.lang.String">
+			<column name="ORDERNO"/>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="STATUS"/>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME"/>
+		</property>
+		<property name="idno" type="java.lang.String">
+			<column name="IDNO"/>
+		</property>
+		<property name="sex" type="java.lang.String">
+			<column name="SEX" />
+		</property>
+		<property name="age" type="java.lang.Integer">
+			<column name="AGE" />
+		</property>
+		<property name="setmealName" type="java.lang.String">
+			<column name="SETMEALNAME" />
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="PHONE" />
+		</property>
+		<property name="sampleAddress" type="java.lang.String">
+			<column name="SAMPLEADDRESS" />
+		</property>
+		<property name="reportAddress" type="java.lang.String">
+			<column name="REPORTADDRESS" />
+		</property>
+		<property name="guardianName" type="java.lang.String">
+			<column name="GUARDIANNAME" />
+		</property>
+		<property name="guardianPhone" type="java.lang.String">
+			<column name="GUARDIANPHONE" />
+		</property>
+		<property name="relationship" type="java.lang.String">
+			<column name="RELATIONSHIP" />
+		</property>
+		<property name="familyHistory" type="java.lang.String">
+			<column name="FAMILYHISTORY" />
+		</property>
+		<property name="height" type="java.lang.String">
+			<column name="HEIGHT" />
+		</property>
+		<property name="weight" type="java.lang.String">
+			<column name="WEIGHT" />
+		</property>
+		<property name="createdate" type="java.util.Date">
+			<column name="CREATEDATE" />
+		</property>
+		<property name="note" type="java.lang.String">
+			<column name="NOTE" />
+		</property>
+	</class>
+</hibernate-mapping>
